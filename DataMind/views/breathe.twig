@@ -1,16 +1,31 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
+    <div id="content">
     <h1>Breathe</h1>
     <img src="images/homeicon.png" height="42" width="42" id="homeIcon">
+        </div>
 {% endblock %}
     {% block javascript %}
     {% raw %}
     <script>
 var homeIcon = document.getElementById("homeIcon");
+var content = document.getElementById("content")
+function AjaxRequest(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      document.getElementById("content").innerHTML =
+      this.responseText;
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
 homeIcon.addEventListener("click", function(e) {
-      window.location.href = "/";
+     AjaxRequest("http://localhost:3000/home");
 })
+
+console.log("test")
     </script>
     {% endraw %}
         {% endblock %}
