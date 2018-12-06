@@ -1,12 +1,42 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
+    <div id = "content">
     <h1>Breathe, Chill, Enjoy</h1>
-
+    <button id = "breatheButton">Breathe</button>
+    <button id = "studyButton">Study</button>
+    <button id = "gainButton">Gain</button>
+</div>
 {% endblock %}
     {% block javascript %}
     {% raw %}
     <script>
+var breatheButton = document.getElementById("breatheButton");
+var studyButton = document.getElementById("studyButton");
+var gainButton = document.getElementById("gainButton");
+var content = document.getElementById("content");
+
+function AjaxRequest(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      document.getElementById("content").innerHTML =
+      this.responseText;
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+breatheButton.addEventListener("click", function(e) {
+    AjaxRequest("http://localhost:3000/breathe");
+});
+
+studyButton.addEventListener("click", function(e) {
+ AjaxRequest("http://localhost:3000/study");
+});
+
+gainButton.addEventListener("click", function(e) {
+ AjaxRequest("http://localhost:3000/gain");
+});
 
     </script>
     {% endraw %}

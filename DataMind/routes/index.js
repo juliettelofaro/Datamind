@@ -3,10 +3,12 @@ var router = express.Router();
 
 /* GET home page.*/
 router.get('/', function(req, res, next) {
+      console.log("on est dans home");
   res.render('home');
 });
 
 router.get('/breathe', function(req, res, next) {
+      console.log("on est dans breathe");
       res.render('breathe');
 });
 

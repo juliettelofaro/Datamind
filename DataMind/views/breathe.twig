@@ -2,12 +2,15 @@
 
 {% block body %}
     <h1>Breathe</h1>
-
+    <img src="images/homeicon.png" height="42" width="42" id="homeIcon">
 {% endblock %}
     {% block javascript %}
     {% raw %}
     <script>
-
+var homeIcon = document.getElementById("homeIcon");
+homeIcon.addEventListener("click", function(e) {
+      window.location.href = "/";
+})
     </script>
     {% endraw %}
         {% endblock %}
