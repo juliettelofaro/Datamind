@@ -1,8 +1,13 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-    <h1>Study</h1>
-    <img src="images/homeicon.png" height="42" width="42" id="homeIcon">
+    <div id = "content">
+        <i class = "fa fa-home"
+           id = "homeIcon"></i>
+         <i class="fas fa-info-circle"
+            id = "infoIcon"></i>
+    </div>
+    <h1>Breathe</h1>
 {% endblock %}
     {% block javascript %}
     {% raw %}
@@ -10,7 +15,7 @@
 var homeIcon = document.getElementById("homeIcon");
 homeIcon.addEventListener("click", function(e) {
       window.location.href = "/";
-})
+});
     </script>
     {% endraw %}
         {% endblock %}

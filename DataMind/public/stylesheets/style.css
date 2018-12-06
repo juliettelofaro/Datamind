@@ -1,35 +1,56 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: "Times New Roman";
+    color: lightblue;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
+    font-style: italic;
 }
 
 #div-btn-home {
-  text-align: center;
+    text-align: center;
 }
 
 .btn-home {
-  margin-right:100px;
-  margin-left:100px;
-  border: none;
-  color: white;
-  font-size: 26px;
-  border-radius: 50%;
-  padding: 50px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 120px;
+    border: none;
+    color: white;
+    font-size: 26px;
+    border-radius: 50%;
+    padding: 50px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
 }
 
 .btn-home:hover {
-  background-color: #555555;
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #555555;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-a {
-  color: #00B7FF;
+#homeIcon {
+    cursor: pointer;
+    font-size: 30px;
+    color: dimgrey;
+    float: left;
+}
+
+#homeIcon:hover {
+    transform: scale(1.1);
+}
+
+#infoIcon {
+    cursor: pointer;
+    font-size: 30px;
+    color: dimgrey;
+   float: right;
+}
+
+#infoIcon:hover {
+    transform: scale(1.1);
 }

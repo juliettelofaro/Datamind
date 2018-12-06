@@ -1,16 +1,22 @@
 {% extends 'layout.twig' %}
 
 {% block body %}
-    <div id="content">
+    <div id = "content">
+       <!--   <i class = "fa fa-home"
+           id = "homeIcon"></i>-->
+      <i class="fas fa-info-circle"
+           id = "infoIcon"></i>
+
+         <button id = "homeIcon"
+                 class = "btn-home">Breathe</button>
+    </div>
     <h1>Breathe</h1>
-    <img src="images/homeicon.png" height="42" width="42" id="homeIcon">
-        </div>
 {% endblock %}
     {% block javascript %}
     {% raw %}
     <script>
 var homeIcon = document.getElementById("homeIcon");
-var content = document.getElementById("content")
+var content = document.getElementById("content");
 function AjaxRequest(url) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -22,10 +28,11 @@ function AjaxRequest(url) {
 }
 
 homeIcon.addEventListener("click", function(e) {
+      console.log("on est dans event de breathe, click sur icon");
      AjaxRequest("http://localhost:3000/home");
-})
+});
 
-console.log("test")
+console.log("test");
     </script>
     {% endraw %}
         {% endblock %}
