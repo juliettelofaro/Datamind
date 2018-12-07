@@ -1,15 +1,10 @@
 {% extends 'layout.twig' %}
-{% block title %}Breathe{% endblock %}
-{% block body %}
-    <div id = "infoSquare">This section will help you with your study. Just take a break and breathe. A short moment of peace, 10 mins to calm down.</div>
-    </div>{% endblock %}
-
-    {% block javascript %}
-    {% raw %}
-    <script>
-    infoIcon.addEventListener("click", function(e) {
-          console.log("test");
-    });
-    </script>
-    {% endraw %}
-        {% endblock %}
+{% block body %}{% endblock %}
+{% block javascript %}
+{% raw %}
+   <script>
+   var basic = "Test valeur";
+   console.log(basic)
+   </script>
+{% endraw %}
+{% endblock %}

@@ -1,10 +1,18 @@
 {% extends 'layout.twig' %}
-{% block title %}Study{% endblock %}
-{% block body %}{% endblock %}
- {% block javascript %}
-    {% raw %}
+{% block body %}<button id="sendIt">Send to gain!</button>{% endblock %}
+{% block javascript %}
+ {% raw %}
     <script>
+    var nom = "juliette"
+    var sendIt = document.getElementById("sendIt")
+    sendIt.addEventListener("click", function(e) {
+          var request = new XMLHttpRequest();
+          request.open('GET', '/gain/'+nom);
+          request.send();
+          console.log("ttt")
+    })
+
     </script>
-    {% endraw %}
+ {% endraw %}
 {% endblock %}
 

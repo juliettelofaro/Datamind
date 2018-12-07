@@ -25,21 +25,35 @@
       {% endblock %}
   </head>
   <body>{% block icons %}
-          <div id = "content">
+      <div id = "content">
             <i class = "fa fa-home"
                id = "homeIcon"></i>
             <i class = "fas fa-info-circle"
                id = "infoIcon"></i>
           </div>
-          <script>
+      <script>
              var homeIcon = document.getElementById("homeIcon");
-             homeIcon.addEventListener("click", function(e) {
-                   window.location.href = "/home";
+             homeIcon.addEventListener("click", function (e) {
+                   window.location.href = "/";
              });
          </script>{% endblock %}
-      <h1>{% block title %}{% endblock %}</h1>
-      {% block body %}
-      {% endblock %}
-      {% block javascript %}{% endblock %}
+  <h1>{% block title %}{{ title }}{% endblock %}</h1>
+  {% block info %}
+      <div id = "infoSquare"
+           style = "display: none"></div>
+      </div>
+      <script>
+    var infoSquare = document.getElementById("infoSquare");
+    infoIcon.addEventListener("click", function (e) {
+          if (infoSquare.style.display === "none") {
+                infoSquare.style.display = "block";
+          } else {
+                infoSquare.style.display = "none";
+          }
+    });
+    </script>{% endblock %}
+  {% block body %}
+  {% endblock %}
+  {% block javascript %}{% endblock %}
   </body>
 </html>
