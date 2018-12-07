@@ -1,21 +1,10 @@
 {% extends 'layout.twig' %}
-
-{% block body %}
-    <div id = "content">
-        <i class = "fa fa-home"
-           id = "homeIcon"></i>
-         <i class="fas fa-info-circle"
-            id = "infoIcon"></i>
-    </div>
-    <h1>Breathe</h1>
+{% block title %}Gain{% endblock %}
+{% block body %}{% endblock %}
+ {% block javascript %}
+ {% raw %}
+ <script>
+ </script>
+ {% endraw %}
 {% endblock %}
-    {% block javascript %}
-    {% raw %}
-    <script>
-var homeIcon = document.getElementById("homeIcon");
-homeIcon.addEventListener("click", function(e) {
-      window.location.href = "/";
-});
-    </script>
-    {% endraw %}
-        {% endblock %}
+

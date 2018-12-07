@@ -1,38 +1,15 @@
 {% extends 'layout.twig' %}
-
+{% block title %}Breathe{% endblock %}
 {% block body %}
-    <div id = "content">
-       <!--   <i class = "fa fa-home"
-           id = "homeIcon"></i>-->
-      <i class="fas fa-info-circle"
-           id = "infoIcon"></i>
+    <div id = "infoSquare">This section will help you with your study. Just take a break and breathe. A short moment of peace, 10 mins to calm down.</div>
+    </div>{% endblock %}
 
-         <button id = "homeIcon"
-                 class = "btn-home">Breathe</button>
-    </div>
-    <h1>Breathe</h1>
-{% endblock %}
     {% block javascript %}
     {% raw %}
     <script>
-var homeIcon = document.getElementById("homeIcon");
-var content = document.getElementById("content");
-function AjaxRequest(url) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      document.getElementById("content").innerHTML =
-      this.responseText;
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
-
-homeIcon.addEventListener("click", function(e) {
-      console.log("on est dans event de breathe, click sur icon");
-     AjaxRequest("http://localhost:3000/home");
-});
-
-console.log("test");
+    infoIcon.addEventListener("click", function(e) {
+          console.log("test");
+    });
     </script>
     {% endraw %}
         {% endblock %}

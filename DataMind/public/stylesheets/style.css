@@ -54,3 +54,15 @@ h1 {
 #infoIcon:hover {
     transform: scale(1.1);
 }
+
+#content {
+    position: relative ;
+}
+#infoSquare {
+    background-color : darkgray;
+    padding-left : 10px;
+    padding-right : 300px;
+    padding-top : 10px;
+    padding-bottom : 80px;
+    float: right;
+}

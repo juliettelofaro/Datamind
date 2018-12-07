@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <div id = "content">
+    <div id = "contentHome">
     <h1>Breathe, Chill, Enjoy</h1>
     <div id = "div-btn-home">
     <button id = "breatheButton"
@@ -23,26 +23,17 @@ var studyButton = document.getElementById("studyButton");
 var gainButton = document.getElementById("gainButton");
 var content = document.getElementById("content");
 
-function AjaxRequest(url) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      document.getElementById("content").innerHTML =
-      this.responseText;
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
 
 breatheButton.addEventListener("click", function(e) {
-    AjaxRequest("http://localhost:3000/breathe");
+    window.location.href = "/breathe";
 });
 
 studyButton.addEventListener("click", function(e) {
- AjaxRequest("http://localhost:3000/study");
+ window.location.href = "/study";
 });
 
 gainButton.addEventListener("click", function(e) {
- AjaxRequest("http://localhost:3000/gain");
+ window.location.href = "/gain";
 });
 
     </script>
