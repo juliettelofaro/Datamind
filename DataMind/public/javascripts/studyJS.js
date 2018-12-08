@@ -16,23 +16,26 @@ var timerVar;
 
 function countUp() {
       var startSessionButton = document.getElementById("startSessionButton");
+      var stopCountMessage   = document.getElementById("stopCountMessage");
       startSessionButton.addEventListener("click", function (e) {
             //mettre un if sur countgo Pour que quand je clique sur stop countUp() arrête de l'appeler
 
-            timerVar              = setInterval(countGo, 1000);
-            var buttonStopStudy       = document.getElementById("buttonStopStudy");
-            console.log("on est dans countup et voici le bouton " + e.target )
+            timerVar            = setInterval(countGo, 1000);
+            var buttonStopStudy = document.getElementById("buttonStopStudy");
+            console.log("on est dans countup et voici le bouton " + e.target);
             buttonStopStudy.style.display = "block";
             buttonStopStudy.addEventListener("click", function () {
                   //Vous avez abandonné, pas d'étoiles ! counter disparaît, var supprimé ?
                   totalSeconds = 0;
+                  clearInterval(timerVar);
+                  stopCountMessage.innerHTML = "You abandonned, you need to click on the Start button again to start a new session from zero. ";
             });
 
       });
 }
 
 function countGo() {
-      console.log("countGo, on rentre ds la fonction, totalSeconds = " + totalSeconds)
+      console.log("countGo, on rentre ds la fonction, totalSeconds = " + totalSeconds);
       ++totalSeconds;
       var hour   = Math.floor(totalSeconds / 3600);
       var minute = Math.floor((totalSeconds - hour * 3600) / 60);
@@ -44,9 +47,6 @@ function countGo() {
             studyJS();
             clearInterval(timerVar);
       }
-
-
       document.getElementById("paraStudy").innerHTML = hour + ":" + minute + ":" + second;
-
 }
 
