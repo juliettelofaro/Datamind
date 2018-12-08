@@ -5,7 +5,7 @@ function studyJS() {
             console.log("ON CLICK")
             var request = new XMLHttpRequest();
             request.onreadystatechange = function() {
-                  content.innerHTML =
+                  contentHome.innerHTML =
                         this.responseText;
             };
             request.open('GET', '/gain/'+nom);

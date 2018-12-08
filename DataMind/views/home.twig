@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
         {% block body %}
 
-    <div id="content">
+    <div id="contentHome">
         <h1>Breathe, Chill, Enjoy !</h1>
     <div id = "div-btn-home">
     <button id = "breatheButton"
@@ -15,39 +15,7 @@
     {% block javascript %}
     {% raw %}
     <script>
-
-var breatheButton = document.getElementById("breatheButton");
-var studyButton = document.getElementById("studyButton");
-var gainButton = document.getElementById("gainButton");
-var content = document.getElementById("content");
-
-
-breatheButton.addEventListener("click", function(e) {
-   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      content.innerHTML =
-      this.responseText;
-  };
-  xhttp.open("GET", "/breathe", true);
-  xhttp.send();
-});
-
-studyButton.addEventListener("click", function(e) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-      content.innerHTML = this.responseText;
-     studyJS();
-  };
-  xhttp.open("GET", "/study", true);
-  xhttp.send();
-
-});
-
-
-gainButton.addEventListener("click", function(e) {
- window.location.href = "/gain";
-});
-
+    homeJS();
     </script>
     {% endraw %}
         {% endblock %}

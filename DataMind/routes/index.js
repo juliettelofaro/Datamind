@@ -20,7 +20,7 @@ router.get('/gain/:nom', function (req, res, next) {
       console.log(" GAIN on est dans le controller gain");
       console.log(" GAIN voici mon prénom ",req.params.nom);
 
-      res.render('gain', { title: 'Gain' });
+      res.render('gain', { nom: req.params.nom });
 });
 
 
