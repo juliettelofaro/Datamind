@@ -19,9 +19,8 @@ function countUp() {
       var startSessionButton = document.getElementById("startSessionButton");
       startSessionButton.addEventListener("click", function () {
             var timerVar              = setInterval(countGo, 1000);
-            var buttonStopStudy       = document.createElement("button");
-            buttonStopStudy.innerText = "Stop";
-            document.body.appendChild(buttonStopStudy);
+            var buttonStopStudy       = document.getElementById("buttonStopStudy");
+            buttonStopStudy.style.display = "block";
             buttonStopStudy.addEventListener("click", function () {
                   //Vous avez abandonné, pas d'étoiles ! counter disparaît
                   totalSeconds = 0;
