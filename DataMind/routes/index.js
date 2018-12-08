@@ -25,5 +25,4 @@ router.get('/gain/:nom', function (req, res, next) {
 
 
 
-
 module.exports = router;

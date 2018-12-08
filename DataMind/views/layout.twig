@@ -12,6 +12,7 @@
           <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
                   integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                   crossorigin = "anonymous"></script>
+          <script src="javascripts/studyJS.js"></script>
           <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
                   integrity = "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
                   crossorigin = "anonymous"></script>
@@ -24,36 +25,17 @@
                 crossorigin = "anonymous">
       {% endblock %}
   </head>
-  <body>{% block icons %}
-      <div id = "content">
-            <i class = "fa fa-home"
-               id = "homeIcon"></i>
-            <i class = "fas fa-info-circle"
-               id = "infoIcon"></i>
-          </div>
-      <script>
-             var homeIcon = document.getElementById("homeIcon");
-             homeIcon.addEventListener("click", function (e) {
-                   window.location.href = "/";
-             });
-         </script>{% endblock %}
-  <h1>{% block title %}{{ title }}{% endblock %}</h1>
-  {% block info %}
-      <div id = "infoSquare"
-           style = "display: none"></div>
-      </div>
-      <script>
-    var infoSquare = document.getElementById("infoSquare");
-    infoIcon.addEventListener("click", function (e) {
-          if (infoSquare.style.display === "none") {
-                infoSquare.style.display = "block";
-          } else {
-                infoSquare.style.display = "none";
-          }
-    });
-    </script>{% endblock %}
+  <body>
   {% block body %}
+
+
   {% endblock %}
-  {% block javascript %}{% endblock %}
+  {% block javascript %}
+
+
+
+
+  {% endblock %}
+
   </body>
 </html>

@@ -1,6 +1,8 @@
 {% extends 'layout.twig' %}
-{% block body %}
-    <div id = "contentHome">
+        {% block body %}
+
+    <div id="content">
+        <h1>Breathe, Chill, Enjoy !</h1>
     <div id = "div-btn-home">
     <button id = "breatheButton"
             class = "btn-home">Breathe</button>
@@ -8,12 +10,12 @@
             class = "btn-home">Study</button>
     <button id = "gainButton"
             class = "btn-home">Gain</button>
-    </div>
-</div>
-{% endblock %}
+       </div></div>
+        {% endblock %}
     {% block javascript %}
     {% raw %}
     <script>
+
 var breatheButton = document.getElementById("breatheButton");
 var studyButton = document.getElementById("studyButton");
 var gainButton = document.getElementById("gainButton");
@@ -21,12 +23,26 @@ var content = document.getElementById("content");
 
 
 breatheButton.addEventListener("click", function(e) {
-    window.location.href = "/breathe";
+   var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      content.innerHTML =
+      this.responseText;
+  };
+  xhttp.open("GET", "/breathe", true);
+  xhttp.send();
 });
 
 studyButton.addEventListener("click", function(e) {
- window.location.href = "/study";
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      content.innerHTML = this.responseText;
+     studyJS();
+  };
+  xhttp.open("GET", "/study", true);
+  xhttp.send();
+
 });
+
 
 gainButton.addEventListener("click", function(e) {
  window.location.href = "/gain";
