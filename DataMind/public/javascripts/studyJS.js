@@ -12,14 +12,14 @@ function studyJS() {
 }
 
 var totalSeconds = 0;
-var intervallOn = false;
+var timerVar;
 
 function countUp() {
       var startSessionButton = document.getElementById("startSessionButton");
       startSessionButton.addEventListener("click", function (e) {
             //mettre un if sur countgo Pour que quand je clique sur stop countUp() arrête de l'appeler
-            if (intervallOn === false) {
-            var timerVar              = setInterval(countGo, 1000);
+
+            timerVar              = setInterval(countGo, 1000);
             var buttonStopStudy       = document.getElementById("buttonStopStudy");
             console.log("on est dans countup et voici le bouton " + e.target )
             buttonStopStudy.style.display = "block";
@@ -27,7 +27,7 @@ function countUp() {
                   //Vous avez abandonné, pas d'étoiles ! counter disparaît, var supprimé ?
                   totalSeconds = 0;
             });
-            }
+
       });
 }
 
@@ -42,12 +42,11 @@ function countGo() {
             alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
             totalSeconds = 0;
             studyJS();
-            intervallOn === true;
-      } else {
-            intervallOn === false;
+            clearInterval(timerVar);
       }
 
+
       document.getElementById("paraStudy").innerHTML = hour + ":" + minute + ":" + second;
-      return intervallOn;
+
 }
 
