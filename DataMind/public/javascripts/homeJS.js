@@ -19,6 +19,7 @@ function homeJS() {
             xhttp.onreadystatechange = function() {
                   contentHome.innerHTML = this.responseText;
                   studyJS();
+                  countUp();
             };
             xhttp.open("GET", "/study", true);
             xhttp.send();

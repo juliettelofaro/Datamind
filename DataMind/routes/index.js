@@ -16,11 +16,11 @@ router.get('/study', function (req, res, next) {
 });
 
 
-router.get('/gain/:nom', function (req, res, next) {
+router.get('/gain/:stars', function (req, res, next) {
       console.log(" GAIN on est dans le controller gain");
-      console.log(" GAIN voici mon prénom ",req.params.nom);
+      console.log(" GAIN voici la var stars ",req.params.stars);
 
-      res.render('gain', { nom: req.params.nom });
+      res.render('gain', { stars: req.params.stars });
 });
 
 
