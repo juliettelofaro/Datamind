@@ -9,6 +9,7 @@ function homeJS() {
             xhttp.onreadystatechange = function () {
                   contentHome.innerHTML =
                         this.responseText;
+                  circlecanvasBreathe();
             };
             xhttp.open("GET", "/breathe", true);
             xhttp.send();
