@@ -48,7 +48,7 @@ h1 {
     cursor: pointer;
     font-size: 30px;
     color: dimgrey;
-   float: right;
+    float: right;
 }
 
 #infoIcon:hover {
@@ -56,19 +56,19 @@ h1 {
 }
 
 #content {
-    position: relative ;
+    position: relative;
 }
+
 #infoSquare {
-    background-color : darkgray;
-    padding-left : 10px;
-    padding-right : 300px;
-    padding-top : 10px;
-    padding-bottom : 80px;
+    background-color: darkgray;
+    padding-left: 10px;
+    padding-right: 300px;
+    padding-top: 10px;
+    padding-bottom: 80px;
     float: right;
 }
 
-
-#contentStudyPage {
+.centerStudy {
     text-align: center;
 }
 
@@ -89,6 +89,7 @@ h1 {
 
 #startSessionButton:hover {
     opacity: 1
+
 }
 
 #buttonStopStudy {
@@ -110,4 +111,11 @@ h1 {
     opacity: 1
 }
 
+#beforeGiveUpMsg {
+    color: red;
+}
+
+#paraStudy {
+    font-size: 100px;
+}
 
