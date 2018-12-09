@@ -1,4 +1,5 @@
 function studyJS() {
+      //ajouter cette valeur à un fichier JSON
       var stars = 0;
       console.log("ON CLICK");
       stars += 1;
@@ -18,19 +19,17 @@ function countUp() {
       var startSessionButton = document.getElementById("startSessionButton");
       var stopCountMessage   = document.getElementById("stopCountMessage");
       startSessionButton.addEventListener("click", function (e) {
-            //mettre un if sur countgo Pour que quand je clique sur stop countUp() arrête de l'appeler
-
+            startSessionButton.disabled = true;
             timerVar            = setInterval(countGo, 1000);
             var buttonStopStudy = document.getElementById("buttonStopStudy");
             console.log("on est dans countup et voici le bouton " + e.target);
             buttonStopStudy.style.display = "block";
             buttonStopStudy.addEventListener("click", function () {
-                  //Vous avez abandonné, pas d'étoiles ! counter disparaît, var supprimé ?
+                  startSessionButton.disabled = false;
                   totalSeconds = 0;
                   clearInterval(timerVar);
-                  stopCountMessage.innerHTML = "You abandonned, you need to click on the Start button again to start a new session from zero. ";
+                  stopCountMessage.innerHTML = "You just gave up, you need to click on the Start button again to start a new session from zero. ";
             });
-
       });
 }
 
