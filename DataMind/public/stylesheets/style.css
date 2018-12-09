@@ -66,3 +66,48 @@ h1 {
     padding-bottom : 80px;
     float: right;
 }
+
+
+#contentStudyPage {
+    text-align: center;
+}
+
+#startSessionButton {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#startSessionButton:hover {
+    opacity: 1
+}
+
+#buttonStopStudy {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#buttonStopStudy:hover {
+    opacity: 1
+}
+
+

@@ -1,10 +1,14 @@
 {% extends 'layout.twig' %}
 {% block body %}<h1>Study hard</h1>
+    <div id="contentStudyPage">
     <button id="startSessionButton">Start a 55min session</button>
     <div id="paraStudy"></div>
     <button id="buttonStopStudy" style="display:none">Give up</button>
-    <p id="stopCountMessage"></p>
-{% endblock %}
+
+    <p id="beforeGiveUpMsg" style="display:none">Be careful ! If you click the counter will go back to zero.</p>
+    <p id="giveUpMsg" style="display:none">You just gave up. The counter went back to zero. Click again on the Start button to begin a new session.</p>
+    </div>
+        {% endblock %}
 {% block javascript %}
 {% raw %}
 <script>
