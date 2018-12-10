@@ -1,4 +1,5 @@
 function circlecanvasBreathe() {
+      var horn             = new Audio('images/mymusic.mp3');
       var canvasBreathe    = document.getElementById("canvasBreathe");
       canvasBreathe.height = window.innerHeight;
       canvasBreathe.width  = window.innerWidth;
@@ -30,7 +31,7 @@ function circlecanvasBreathe() {
             c.strokeStyle = "red";
             c.stroke();
             if (radius <= 201 && radius >= 51) {
-                  radius -= 0.2;
+                  radius -= 0.4;
             } else if (radius <= 52) {
                   window.cancelAnimationFrame(goesBackRequest);
                   animate();
@@ -38,7 +39,13 @@ function circlecanvasBreathe() {
             }
       }
 
+      function playMusic() {
+            horn.play();
+      }
+
       canvasBreathe.addEventListener("click", function () {
             animate();
+            setInterval(playMusic, 50);
+            playMusic();
       });
 }
