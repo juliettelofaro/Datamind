@@ -117,9 +117,8 @@ h1 {
 
 #paraStudy {
     font-size: 100px;
-    margin : 50px;
+    margin: 50px;
 }
-
 
 #btnBackToStudy {
     background-color: lightgreen;
@@ -161,12 +160,31 @@ h1 {
 
 #paraNumberStars {
     text-align: center;
-    margin : 50px;
+    margin: 50px;
     font-size: 16px;
 
 }
 
 h3 {
     text-align: center;
-    margin : 50px;
+    margin: 50px;
 }
+
+#buttonStartBreathing {
+    background-color: lightpink;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+    padding: 16px 32px;
+}
+
+#buttonStartBreathing:hover {
+    opacity: 1
+  }
