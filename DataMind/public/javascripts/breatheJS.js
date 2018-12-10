@@ -1,7 +1,7 @@
 function circlecanvasBreathe() {
       var horn             = new Audio('images/mymusic.mp3');
       var canvasBreathe    = document.getElementById("canvasBreathe");
-      canvasBreathe.height = window.innerHeight;
+      canvasBreathe.height = 450;
       canvasBreathe.width  = window.innerWidth;
       var c                = canvasBreathe.getContext("2d");
       var radius           = 50;
@@ -11,7 +11,9 @@ function circlecanvasBreathe() {
             var myReq = requestAnimationFrame(animate);
             c.clearRect(0, 0, innerWidth, innerHeight);
             c.beginPath();
-            c.arc(605, 200, radius, 0, Math.PI * 2);
+            c.arc(625, 200, radius, 0, Math.PI * 2);
+            c.fillText("Breathe In",600,210);
+            c.fillStyle = "deeppink";
             c.strokeStyle = "lightpink";
             c.stroke();
             if (radius >= 50 && radius <= 200) {
@@ -28,7 +30,9 @@ function circlecanvasBreathe() {
             var goesBackRequest = requestAnimationFrame(goesBack);
             c.clearRect(0, 0, innerWidth, innerHeight);
             c.beginPath();
-            c.arc(605, 200, radius, 0, Math.PI * 2);
+            c.arc(625, 200, radius, 0, Math.PI * 2);
+            c.fillText("Breathe Out",600,210);
+            c.fillStyle = "lightpink";
             c.strokeStyle = "deeppink";
             c.stroke();
             if (radius <= 201 && radius >= 51) {
