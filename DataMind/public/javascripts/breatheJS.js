@@ -13,37 +13,47 @@ function circlecanvasBreathe() {
             c.arc(600, 200, radius, 0, Math.PI * 2);
             c.strokeStyle = "red";
             c.stroke();
-            if (radius >= 50 && radius <= 199) {
+            if (radius > 49 && radius <= 199) {
                   radius += 1;
-                  console.log("1ANIMATE on est dans le PREMIER IFF ");
-            } else if (radius == 200) {
+                  console.log("1. ANIMATE IF");
+                  console.log("ANIMATE bigRadius dans animate : " + bigRadius);
+            } else if (radius === 200) {
+                  console.log("2. ANIMATE  ELSE IF");
                   window.cancelAnimationFrame(myReq);
                   goesBack();
-                  console.log("2ANIMATE on est dans PREMIER else if  ");
-            } else if (bigRadius <= 50 && bigRadius <= 199) {
-                  goesBack();
-                  console.log("3ANIMATE on est dans DEUXIEME else if ");
             }
       }
 
       function goesBack() {
-            requestAnimationFrame(goesBack);
+            if (bigRadius >= 49 && bigRadius <= 51) {
+                  bigRadius = 200;
+            }
+            var goesBackRequest = requestAnimationFrame(goesBack);
             c.clearRect(0, 0, innerWidth, innerHeight);
             c.beginPath();
             c.arc(600, 200, bigRadius, 0, Math.PI * 2);
             c.strokeStyle = "red";
             c.stroke();
-            if (bigRadius <= 200 && bigRadius >= 51) {
-                  bigRadius -= 1;
-            } else if (bigRadius <= 51) {
+            //le pb,c qu'une fois qu'on passe une fois ici, bigRadius reste à 51, donc
+            //la 2e fois qu'on passe il est encore à 50
+            // donc le cercle se creer à 50,
+            //ne passe pas dans la boucle ci-dessous
+            //il faut que ce soit 50 ici
+            //mais quand je mets 50 animate() n'est pas rappelé
+            if (bigRadius <= 200 && bigRadius >= 50) {
+                  console.log("3. GOESBACK IF");
+                  console.log("3. GOESBACK bigRadius dans animate : " + bigRadius);
+                  bigRadius -= 0.5;
+            } else if (bigRadius === 50) {
+                  console.log("4. GOESBACK  ELSE IF");
+                  console.log("4 GOESBACK bigRadius dans animate : " + bigRadius);
                   radius = bigRadius;
-                  console.log("Voici radius dans else if de goesback : " + radius);
+                  window.cancelAnimationFrame(goesBackRequest);
                   animate();
             }
       }
 
       canvasBreathe.addEventListener("click", function () {
-            console.log("JJJE CLICK");
             animate();
       });
 }
