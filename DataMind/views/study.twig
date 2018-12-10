@@ -1,5 +1,7 @@
 {% extends 'layout.twig' %}
-{% block body %}<h1>Study hard</h1>
+{% block body %}
+     <div id="contentStudy">
+         <h1>Study hard</h1>
     <div class = "centerStudy">
     <button id = "startSessionButton">Start a 55min session</button>
     <div id = "paraStudy"></div>
@@ -9,7 +11,7 @@
        style = "display:none">Be careful ! If you click you'll loose your session.</p>
     <p id = "giveUpMsg"
        style = "display:none">You just gave up. The counter stopped. Click again on the Start button to begin a new session.</p>
-</div>
+    </div></div>
 {% endblock %}
 {% block javascript %}
 {% raw %}

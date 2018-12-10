@@ -1,11 +1,13 @@
 {% extends 'layout.twig' %}
-{% block body %}<h1>Gain stars</h1>
+{% block body %}<div id="contentGain">
+    <h1>Gain stars</h1>
+
     <h3>Here you can find all the stars you've won so far</h3>
     <p id="paraNumberStars">You currently have <strong>{{ stars }} </strong>stars.</p>
     <div class = "centerStudy">
         <button id = "btnBackToStudy">Want to do another session ? Click here !</button>
         <button id = "btnBackToBreathe">Want to take a break ? Click here !</button>
-    </div>
+    </div></div>
 {% endblock %}
 {% block javascript %}
 {% raw %}

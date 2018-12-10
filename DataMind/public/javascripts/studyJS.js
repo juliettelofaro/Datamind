@@ -7,6 +7,7 @@ function studyJS() {
       request.onreadystatechange = function () {
             contentHome.innerHTML =
                   this.responseText;
+            initGainJS();
       };
       request.open('GET', '/gain/' + stars);
       request.send();
@@ -36,7 +37,7 @@ function countGo() {
       var hour            = Math.floor(totalSeconds / 3600);
       var minute          = Math.floor((totalSeconds - hour * 3600) / 60);
       var second          = totalSeconds - (hour * 3600 + minute * 60);
-      if (second == 7) {
+      if (second == 3) {
             alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
             totalSeconds = 0;
             studyJS();
