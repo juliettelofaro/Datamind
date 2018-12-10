@@ -17,8 +17,9 @@ function initGainJS() {
       btnBackToBreathe.addEventListener("click", function () {
             var request                = new XMLHttpRequest();
             request.onreadystatechange = function () {
-                  contentHome.innerHTML =
+                  contentGain.innerHTML =
                         this.responseText;
+                  circlecanvasBreathe();
             };
             request.open('GET', '/breathe');
             request.send();
