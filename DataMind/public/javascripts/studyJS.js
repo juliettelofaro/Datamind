@@ -7,16 +7,13 @@ function initStudyJS() {
 
       function studyJS() {
             //ajouter cette valeur à un fichier JSON
-            var stars = 0;
-            console.log("ON CLICK");
-            stars += 1;
             var request                = new XMLHttpRequest();
             request.onreadystatechange = function () {
                   contentHome.innerHTML =
                         this.responseText;
                   initGainJS();
             };
-            request.open('GET', '/gain/' + stars);
+            request.open('GET', '/gain');
             request.send();
       }
 
@@ -44,7 +41,8 @@ function initStudyJS() {
             var hour            = Math.floor(totalSeconds / 3600);
             var minute          = Math.floor((totalSeconds - hour * 3600) / 60);
             var second          = totalSeconds - (hour * 3600 + minute * 60);
-            if (second == 3) {
+            if (second === 3) {
+                  sessionStorage.setItem("couleur","vert")
                   alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
                   totalSeconds = 0;
                   studyJS();
@@ -75,4 +73,7 @@ function initStudyJS() {
 
       }
       countUp()
+
+
+
 }

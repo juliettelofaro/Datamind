@@ -3,26 +3,20 @@ var router  = express.Router();
 
 /* GET home page.*/
 router.get('/', function (req, res, next) {
-      res.render('home', { title: 'Breathe, Chill, Enjoy'});
+      res.render('home', {title: 'Breathe, Chill, Enjoy'});
 });
 
 router.get('/breathe', function (req, res, next) {
-      console.log(" BREATH API")
-      res.render('breathe', { title: 'Breathe' });
+      console.log(" BREATH API");
+      res.render('breathe', {title: 'Breathe'});
 });
 
 router.get('/study', function (req, res, next) {
-      res.render('study', { title: 'Study'});
+      res.render('study', {title: 'Study'});
 });
 
-
-router.get('/gain/:stars', function (req, res, next) {
-      console.log(" GAIN on est dans le controller gain");
-      console.log(" GAIN voici la var stars ",req.params.stars);
-
-      res.render('gain', { stars: req.params.stars });
+router.get('/gain', function (req, res, next) {
+      res.render('gain');
 });
-
-
 
 module.exports = router;

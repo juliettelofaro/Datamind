@@ -188,3 +188,19 @@ h3 {
 #buttonStartBreathing:hover {
     opacity: 1
   }
+
+.buttonBackHome {
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+    background-color: sandybrown;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+}
+
+.buttonBackHome:hover {
+    opacity: 1
+}
