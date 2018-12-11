@@ -19,7 +19,7 @@ function homeJS() {
             var xhttp                = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                   contentHome.innerHTML = this.responseText;
-                  countUp();
+                  initStudyJS();
             };
             xhttp.open("GET", "/study", true);
             xhttp.send();

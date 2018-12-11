@@ -8,7 +8,7 @@ function initGainJS() {
             request.onreadystatechange = function () {
                   contentGain.innerHTML =
                         this.responseText;
-                  countUp();
+                  initStudyJS();
             };
             request.open('GET', '/study', true);
             request.send();
@@ -24,5 +24,9 @@ function initGainJS() {
             request.open('GET', '/breathe');
             request.send();
       });
-
+      var buttonHomePageGain = document.getElementById("buttonHomePageGain");
+      buttonHomePageGain.addEventListener("click", function () {
+            var type = 3;
+            initBackHome(type);
+      });
 }

@@ -1,12 +1,14 @@
 {% extends 'layout.twig' %}
 {% block body %}
-     <div id="contentStudy">
+    <div id = "contentStudy">
          <h1>Study hard</h1>
+        <button class="buttonBackHome" id="buttonHomePageStudy">Home Page</button>
     <div class = "centerStudy">
     <button id = "startSessionButton">Start a 55min session</button>
     <div id = "paraStudy"></div>
-    <div id="divButtonStopStudy" style = "display:none"><button id = "buttonStopStudy"
-            >Give up</button></div>
+    <div id = "divButtonStopStudy"
+         style = "display:none"><button id = "buttonStopStudy"
+        >Give up</button></div>
     <p id = "beforeGiveUpMsg"
        style = "display:none">Be careful ! If you click you'll loose your session.</p>
     <p id = "giveUpMsg"

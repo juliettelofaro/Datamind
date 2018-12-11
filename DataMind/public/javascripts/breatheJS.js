@@ -1,19 +1,26 @@
 function circlecanvasBreathe() {
-      var horn                 = new Audio('images/mymusic.mp3');
-      var canvasBreathe        = document.getElementById("canvasBreathe");
-      canvasBreathe.height     = 450;
-      canvasBreathe.width      = window.innerWidth;
-      var c                    = canvasBreathe.getContext("2d");
-      var radius               = 50;
-      var buttonStartBreathing = document.getElementById("buttonStartBreathing");
-      var x                    = 625;
-      var y                    = 200;
-      var xText                = 600;
-      var yText                = 210;
-      var deeppink             = "deeppink";
-      var lightpink            = "lightpink";
+      var horn                  = new Audio('images/mymusic.mp3');
+      var canvasBreathe         = document.getElementById("canvasBreathe");
+      canvasBreathe.height      = 450;
+      canvasBreathe.width       = window.innerWidth;
+      var c                     = canvasBreathe.getContext("2d");
+      var radius                = 50;
+      var buttonStartBreathing  = document.getElementById("buttonStartBreathing");
+      var x                     = 625;
+      var y                     = 200;
+      var xText                 = 600;
+      var yText                 = 210;
+      var deeppink              = "deeppink";
+      var lightpink             = "lightpink";
+      var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
+
+      function playMusic() {
+            horn.play();
+      }
 
       function animate() {
+            var breathingTimeLapse = setInterval(playMusic, 50);
+            playMusic();
             var myReq = requestAnimationFrame(animate);
             c.clearRect(0, 0, innerWidth, innerHeight);
             c.beginPath();
@@ -50,13 +57,12 @@ function circlecanvasBreathe() {
             }
       }
 
-      function playMusic() {
-            horn.play();
-      }
-
       buttonStartBreathing.addEventListener("click", function () {
             animate();
-            setInterval(playMusic, 50);
-            playMusic();
+      });
+
+      buttonHomePageBreathe.addEventListener("click", function () {
+            var type = 1;
+            initBackHome(type);
       });
 }
