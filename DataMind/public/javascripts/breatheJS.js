@@ -51,8 +51,14 @@ function circlecanvasBreathe() {
             }
       }
 
+      function startTo(){
+            horn.play()
+      }
+
       buttonStartBreathing.addEventListener("click", function () {
-            horn.play();
+
+
+            setInterval(startTo,50);
             animate();
       });
 
