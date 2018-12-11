@@ -14,13 +14,7 @@ function circlecanvasBreathe() {
       var lightpink             = "lightpink";
       var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
 
-      function playMusic() {
-            horn.play();
-      }
-
       function animate() {
-            var breathingTimeLapse = setInterval(playMusic, 50);
-            playMusic();
             var myReq = requestAnimationFrame(animate);
             c.clearRect(0, 0, innerWidth, innerHeight);
             c.beginPath();
@@ -58,10 +52,12 @@ function circlecanvasBreathe() {
       }
 
       buttonStartBreathing.addEventListener("click", function () {
+            horn.play();
             animate();
       });
 
       buttonHomePageBreathe.addEventListener("click", function () {
+            horn.pause();
             var type = 1;
             initBackHome(type);
       });
