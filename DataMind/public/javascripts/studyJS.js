@@ -36,19 +36,21 @@ function initStudyJS() {
 
       function countGo() {
             ++totalSeconds;
-            var buttonStopStudy = document.getElementById("buttonStopStudy");
-            var paraStudy       = document.getElementById("paraStudy");
-            var hour            = Math.floor(totalSeconds / 3600);
-            var minute          = Math.floor((totalSeconds - hour * 3600) / 60);
-            var second          = totalSeconds - (hour * 3600 + minute * 60);
+            var buttonStopStudy   = document.getElementById("buttonStopStudy");
+            var paraStudy         = document.getElementById("paraStudy");
+            var hour              = Math.floor(totalSeconds / 3600);
+            var minute            = Math.floor((totalSeconds - hour * 3600) / 60);
+            var second            = totalSeconds - (hour * 3600 + minute * 60);
             var numberStarStorage = 1;
 
             if (second === 3) {
-                  if (sessionStorage.getItem("stars") === null) {
+                  if (localStorage.getItem("stars") === null) {
                         localStorage.setItem("stars", numberStarStorage);
-                  } else  {
-                        numberStarStorage++;
-                        localStorage.setItem("stars", numberStarStorage);
+                  } else {
+                        var upOneNumberStars = localStorage.getItem("stars");
+                        upOneNumberStars++;
+                        localStorage.setItem("stars",  upOneNumberStars);
+
                   }
                   alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
                   totalSeconds = 0;
@@ -79,8 +81,7 @@ function initStudyJS() {
             });
 
       }
-      countUp()
 
-
+      countUp();
 
 }
