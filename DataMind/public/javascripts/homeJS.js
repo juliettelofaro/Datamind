@@ -26,4 +26,15 @@ function homeJS() {
 
       });
 
+      gainButton.addEventListener("click", function (e) {
+            var xhttp                = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                  contentHome.innerHTML = this.responseText;
+                  initGainJS();
+
+            };
+            xhttp.open("GET", "/gain");
+            xhttp.send();
+
+      });
 }
