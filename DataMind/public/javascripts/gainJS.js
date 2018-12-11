@@ -4,8 +4,9 @@ function initGainJS() {
       var btnBackToBreathe     = document.getElementById("btnBackToBreathe");
       var contentGain          = document.getElementById("contentGain");
       var divNumberStars       = document.getElementById("divNumberStars");
-      var couleur              = sessionStorage.getItem("couleur");
-      divNumberStars.innerHTML = couleur;
+      var stars                = localStorage.getItem("stars");
+      divNumberStars.innerHTML = stars;
+
       btnBackToStudy.addEventListener("click", function () {
             var request                = new XMLHttpRequest();
             request.onreadystatechange = function () {

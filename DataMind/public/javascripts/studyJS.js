@@ -41,8 +41,15 @@ function initStudyJS() {
             var hour            = Math.floor(totalSeconds / 3600);
             var minute          = Math.floor((totalSeconds - hour * 3600) / 60);
             var second          = totalSeconds - (hour * 3600 + minute * 60);
+            var numberStarStorage = 1;
+
             if (second === 3) {
-                  sessionStorage.setItem("couleur","vert")
+                  if (sessionStorage.getItem("stars") === null) {
+                        localStorage.setItem("stars", numberStarStorage);
+                  } else  {
+                        numberStarStorage++;
+                        localStorage.setItem("stars", numberStarStorage);
+                  }
                   alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
                   totalSeconds = 0;
                   studyJS();
