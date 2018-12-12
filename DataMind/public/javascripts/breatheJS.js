@@ -53,9 +53,6 @@ function circlecanvasBreathe() {
             }
       }
 
-      function timeTenMin() {
-
-      }
 
       buttonStartBreathing.addEventListener("click", function () {
             playMusic();
@@ -75,3 +72,7 @@ function circlecanvasBreathe() {
             initBackHome(type);
       });
 }
+
+
+
+

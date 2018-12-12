@@ -77,4 +77,5 @@ function initStudyJS() {
 
       }
       countUp();
+      initTimerUp ()
 }
