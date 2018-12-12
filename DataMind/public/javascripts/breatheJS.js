@@ -13,6 +13,8 @@ function circlecanvasBreathe() {
       var deeppink              = "deeppink";
       var lightpink             = "lightpink";
       var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
+      var paraBreathe           = document.getElementById("paraBreathe");
+      var timeGo;
 
       function animate() {
             var myReq = requestAnimationFrame(animate);
@@ -51,23 +53,24 @@ function circlecanvasBreathe() {
             }
       }
 
- var timeGo;
+      function timeTenMin() {
+
+      }
 
       buttonStartBreathing.addEventListener("click", function () {
-            playMusic()
-
+            playMusic();
             animate();
-
+            timeTenMin();
       });
 
       function playMusic() {
             horn.play();
-            timeGo = window.setTimeout(playMusic,100)
+            timeGo = window.setTimeout(playMusic, 100);
       }
 
       buttonHomePageBreathe.addEventListener("click", function () {
             horn.pause();
-            clearTimeout(timeGo)
+            clearTimeout(timeGo);
             var type = 1;
             initBackHome(type);
       });
