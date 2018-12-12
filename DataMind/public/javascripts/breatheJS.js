@@ -51,19 +51,23 @@ function circlecanvasBreathe() {
             }
       }
 
-      function startTo(){
-            horn.play()
-      }
+ var timeGo;
 
       buttonStartBreathing.addEventListener("click", function () {
+            playMusic()
 
-
-            setInterval(startTo,50);
             animate();
+
       });
+
+      function playMusic() {
+            horn.play();
+            timeGo = window.setTimeout(playMusic,100)
+      }
 
       buttonHomePageBreathe.addEventListener("click", function () {
             horn.pause();
+            clearTimeout(timeGo)
             var type = 1;
             initBackHome(type);
       });
