@@ -13,7 +13,6 @@ function circlecanvasBreathe() {
       var deeppink              = "deeppink";
       var lightpink             = "lightpink";
       var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
-      var paraBreathe           = document.getElementById("paraBreathe");
       var timeGo;
 
       function animate() {

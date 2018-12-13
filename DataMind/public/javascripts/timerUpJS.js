@@ -1,5 +1,5 @@
 function initTimerUp(study, breathe) {
-      function studyJS() {
+      function fromStudyToGain() {
             var request                = new XMLHttpRequest();
             request.onreadystatechange = function () {
                   contentHome.innerHTML =
@@ -8,6 +8,11 @@ function initTimerUp(study, breathe) {
             };
             request.open('GET', '/gain');
             request.send();
+      }
+
+      function fromBreatheToHome() {
+            var type = 1;
+            initBackHome(type);
       }
 
       var totalSeconds = 0;
@@ -58,7 +63,7 @@ function initTimerUp(study, breathe) {
                               localStorage.setItem("stars", upOneNumberStars);
                         }
                         alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
-                        studyJS();
+                        fromStudyToGain();
                         clearInterval(timerVar);
                   }
             }
@@ -68,6 +73,7 @@ function initTimerUp(study, breathe) {
                   paraBreathe.innerHTML = sentence;
                   if (second === 10) {
                         clearInterval(timerVar);
+                        fromBreatheToHome()
                   }
             }
 

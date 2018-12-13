@@ -120,6 +120,12 @@ h1 {
     margin: 50px;
 }
 
+
+#paraBreathe {
+    font-size: 50px;
+    color : dimgray;
+}
+
 #btnBackToStudy {
     background-color: lightgreen;
     border: none;
