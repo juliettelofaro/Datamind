@@ -37,10 +37,10 @@ function initTimerUp(study, breathe) {
             }
 
             if (study === 50) {
-                  var paraStudy       = document.getElementById("paraStudy");
-                  var buttonStopStudy = document.getElementById("buttonStopStudy");
-                  var beforeGiveUpMsg = document.getElementById("beforeGiveUpMsg");
-                  paraStudy.innerHTML = sentence;
+                  var paraStudy                    = document.getElementById("paraStudy");
+                  var buttonStopStudy              = document.getElementById("buttonStopStudy");
+                  var beforeGiveUpMsg              = document.getElementById("beforeGiveUpMsg");
+                  paraStudy.innerHTML              = sentence;
                   divButtonStopStudy.style.display = "block";
                   buttonStopStudy.addEventListener("mouseenter", function () {
                         beforeGiveUpMsg.style.display = "block";
@@ -73,7 +73,8 @@ function initTimerUp(study, breathe) {
                   paraBreathe.innerHTML = sentence;
                   if (second === 10) {
                         clearInterval(timerVar);
-                        fromBreatheToHome()
+                        alert("You just finished the 10 mins, you'll now be redirected to the Homepage.");
+                        fromBreatheToHome();
                   }
             }
 
