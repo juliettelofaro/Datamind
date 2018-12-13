@@ -71,6 +71,7 @@ function circlecanvasBreathe() {
             var type = 1;
             initBackHome(type);
       });
+
 }
 
 
