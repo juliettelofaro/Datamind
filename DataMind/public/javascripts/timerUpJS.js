@@ -18,11 +18,23 @@ function initTimerUp(study, breathe) {
             var hour              = Math.floor(totalSeconds / 3600);
             var minute            = Math.floor((totalSeconds - hour * 3600) / 60);
             var second            = totalSeconds - (hour * 3600 + minute * 60);
-            var sentence          = minute + ":" + second;
             var numberStarStorage = 1;
+            var sentence;
+
+
+
+
+            if (minute < 10 && second < 10) {
+                  sentence = "0" + minute + ":" + "0" + second;
+            } else if (minute > 10 && second < 10) {
+                  sentence = minute + ":" + "0" + second;
+            } else if (minute < 10 && second >= 10) {
+                  sentence = "0" + minute + ":" + second;
+            } else {
+                  sentence = minute + ":" + second;
+            }
 
             if (study === 50) {
-
                   var paraStudy       = document.getElementById("paraStudy");
                   paraStudy.innerHTML = sentence;
                   if (second === 5) {
@@ -32,7 +44,6 @@ function initTimerUp(study, breathe) {
                               var upOneNumberStars = localStorage.getItem("stars");
                               upOneNumberStars++;
                               localStorage.setItem("stars", upOneNumberStars);
-
                         }
                         alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
                         studyJS();
