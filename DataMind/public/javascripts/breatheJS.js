@@ -53,11 +53,11 @@ function circlecanvasBreathe() {
             }
       }
 
-
       buttonStartBreathing.addEventListener("click", function () {
+            initTimerUp(0, 10);
             playMusic();
             animate();
-            timeTenMin();
+
       });
 
       function playMusic() {
@@ -71,7 +71,7 @@ function circlecanvasBreathe() {
             var type = 1;
             initBackHome(type);
       });
-      initTimerUp(0, 10)
+
 }
 
 

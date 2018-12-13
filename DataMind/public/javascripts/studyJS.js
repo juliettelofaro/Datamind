@@ -1,4 +1,6 @@
 function initStudyJS() {
-      var paraStudy = document.getElementById("paraStudy")
-      initTimerUp(50, 0)
+      var startSessionButton = document.getElementById("startSessionButton");
+      startSessionButton.addEventListener("click", function (e) {
+            initTimerUp(50, 0);
+      });
 }
