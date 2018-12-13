@@ -9,18 +9,24 @@ function initTimerUp(study, breathe) {
             var minute            = Math.floor((totalSeconds - hour * 3600) / 60);
             var second = totalSeconds - (hour * 3600 + minute * 60);
             var sentence = minute + ":" + second;
-            console.log(sentence)
 
-            if (study === 50) {
+
+            if (study === 50 ) {
+                  var paraStudy = document.getElementById("paraStudy");
+                  paraStudy.innerHTML = sentence;
                   if (second === 5) {
                         clearInterval(timerVar)
                   }
             }
 
             if (breathe === 10) {
+                  var paraBreathe = document.getElementById("paraBreathe");
+                  paraBreathe.innerHTML = sentence;
                   if (second === 10) {
                         clearInterval(timerVar)
                   }
             }
+
+
       }
 }
