@@ -8,7 +8,6 @@ function initStudyJS() {
       });
 
       startSessionButton.addEventListener("click", function (e) {
-
             initTimerUp(50, 0);
             giveUpMsg.style.display = "none";
       });

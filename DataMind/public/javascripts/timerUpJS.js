@@ -1,23 +1,21 @@
 function initTimerUp(study, breathe) {
+
+      var totalSeconds = 0;
+      var timerVar     = setInterval(countGo, 1000);
+      var request      = new XMLHttpRequest();
+      var timeGo;
+
+      // REDIRECTION STUDY -> GAIN
       function fromStudyToGain() {
-            var request                = new XMLHttpRequest();
             request.onreadystatechange = function () {
-                  contentHome.innerHTML =
-                        this.responseText;
+                  contentHome.innerHTML = this.responseText;
                   initGainJS();
             };
             request.open('GET', '/gain');
             request.send();
       }
 
-      function fromBreatheToHome() {
-            var type = 1;
-            initBackHome(type);
-      }
-
-      var totalSeconds = 0;
-      var timerVar     = setInterval(countGo, 1000);
-
+      // FUNCTION WATCH
       function countGo() {
             ++totalSeconds;
             var hour              = Math.floor(totalSeconds / 3600);
@@ -36,6 +34,7 @@ function initTimerUp(study, breathe) {
                   sentence = minute + ":" + second;
             }
 
+            // STUDY WATCH
             if (study === 50) {
                   var paraStudy                    = document.getElementById("paraStudy");
                   var buttonStopStudy              = document.getElementById("buttonStopStudy");
@@ -68,15 +67,17 @@ function initTimerUp(study, breathe) {
                   }
             }
 
+            // BREATHE WATCH
             if (breathe === 10) {
                   var paraBreathe       = document.getElementById("paraBreathe");
                   paraBreathe.innerHTML = sentence;
                   if (second === 10) {
                         clearInterval(timerVar);
-                        alert("You just finished the 10 mins, you'll now be redirected to the Homepage.");
-                        fromBreatheToHome();
+                        stopMusic()
+                        alert("You just finished the 10 mins. Now go back to work!");
+                        var type = 1;
+                        initBackHome(type);
                   }
             }
-
       }
 }
