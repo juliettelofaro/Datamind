@@ -21,9 +21,6 @@ function initTimerUp(study, breathe) {
             var numberStarStorage = 1;
             var sentence;
 
-
-
-
             if (minute < 10 && second < 10) {
                   sentence = "0" + minute + ":" + "0" + second;
             } else if (minute > 10 && second < 10) {
@@ -36,7 +33,22 @@ function initTimerUp(study, breathe) {
 
             if (study === 50) {
                   var paraStudy       = document.getElementById("paraStudy");
+                  var buttonStopStudy = document.getElementById("buttonStopStudy");
+                  var beforeGiveUpMsg = document.getElementById("beforeGiveUpMsg");
                   paraStudy.innerHTML = sentence;
+                  divButtonStopStudy.style.display = "block";
+                  buttonStopStudy.addEventListener("mouseenter", function () {
+                        beforeGiveUpMsg.style.display = "block";
+                  });
+                  buttonStopStudy.addEventListener("mouseout", function () {
+                        beforeGiveUpMsg.style.display = "none";
+                  });
+                  buttonStopStudy.addEventListener("click", function () {
+                        startSessionButton.disabled = false;
+                        totalSeconds                = 0;
+                        clearInterval(timerVar);
+                        giveUpMsg.style.display = "block";
+                  });
                   if (second === 5) {
                         if (localStorage.getItem("stars") === null) {
                               localStorage.setItem("stars", numberStarStorage);
