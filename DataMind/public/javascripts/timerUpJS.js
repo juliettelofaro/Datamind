@@ -1,4 +1,4 @@
-function initTimerUp() {
+function initTimerUp(study, breathe) {
 
       var totalSeconds = 0;
       var timerVar = setInterval(countGo,1000);
@@ -10,5 +10,17 @@ function initTimerUp() {
             var second = totalSeconds - (hour * 3600 + minute * 60);
             var sentence = minute + ":" + second;
             console.log(sentence)
+
+            if (study === 50) {
+                  if (second === 5) {
+                        clearInterval(timerVar)
+                  }
+            }
+
+            if (breathe === 10) {
+                  if (second === 10) {
+                        clearInterval(timerVar)
+                  }
+            }
       }
 }

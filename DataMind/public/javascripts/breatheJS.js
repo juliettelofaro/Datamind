@@ -71,7 +71,7 @@ function circlecanvasBreathe() {
             var type = 1;
             initBackHome(type);
       });
-
+      initTimerUp(0, 10)
 }
 
 

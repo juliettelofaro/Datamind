@@ -1,3 +1,3 @@
 function initStudyJS() {
-      initTimerUp()
+      initTimerUp(50, 0)
 }
