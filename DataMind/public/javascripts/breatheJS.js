@@ -16,6 +16,7 @@ function circlecanvasBreathe() {
       var paraBreathe           = document.getElementById("paraBreathe");
       var timeGo;
 
+
       function animate() {
             var myReq = requestAnimationFrame(animate);
             c.clearRect(0, 0, innerWidth, innerHeight);
@@ -57,11 +58,15 @@ function circlecanvasBreathe() {
             animate();
             initTimerUp(0, 10);
             playMusic()
+            buttonStartBreathing.disabled = true;
       });
 
       buttonHomePageBreathe.addEventListener("click", function () {
             var type = 1;
             initBackHome(type);
-            stopMusic()
+            stopMusic();
+          // arrêter le setInterval de timerUp, only solution ; put this event directly
+            //in timerUpJS
+
       });
 }

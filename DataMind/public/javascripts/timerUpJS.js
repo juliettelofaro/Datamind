@@ -60,6 +60,7 @@ function initTimerUp(study, breathe) {
                               var upOneNumberStars = localStorage.getItem("stars");
                               upOneNumberStars++;
                               localStorage.setItem("stars", upOneNumberStars);
+
                         }
                         alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
                         fromStudyToGain();
@@ -71,13 +72,16 @@ function initTimerUp(study, breathe) {
             if (breathe === 10) {
                   var paraBreathe       = document.getElementById("paraBreathe");
                   paraBreathe.innerHTML = sentence;
-                  if (second === 10) {
+                  if (second === 55) {
                         clearInterval(timerVar);
-                        stopMusic()
+                        stopMusic();
                         alert("You just finished the 10 mins. Now go back to work!");
                         var type = 1;
                         initBackHome(type);
                   }
             }
       }
+
 }
+
+
