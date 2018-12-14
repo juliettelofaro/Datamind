@@ -2,18 +2,8 @@ function initTimerUp(study, breathe) {
 
       var totalSeconds = 0;
       var timerVar     = setInterval(countGo, 1000);
-      var request      = new XMLHttpRequest();
       var timeGo;
 
-      // REDIRECTION STUDY -> GAIN
-      function fromStudyToGain() {
-            request.onreadystatechange = function () {
-                  contentHome.innerHTML = this.responseText;
-                  initGainJS();
-            };
-            request.open('GET', '/gain');
-            request.send();
-      }
 
       // FUNCTION WATCH
       function countGo() {
