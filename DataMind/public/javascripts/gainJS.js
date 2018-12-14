@@ -4,29 +4,28 @@ function initGainJS() {
       var btnBackToBreathe     = document.getElementById("btnBackToBreathe");
       var divNumberStars       = document.getElementById("divNumberStars");
       var stars                = localStorage.getItem("stars");
-      var contentGain            = document.getElementById("contentGain");
-
+      var contentGain          = document.getElementById("contentGain");
+      var buttonHomePageGain   = document.getElementById("buttonHomePageGain");
       var url;
       var methodToCall;
       divNumberStars.innerHTML = stars;
 
       btnBackToStudy.addEventListener("click", function () {
-            url = "/study";
+            url          = "/study";
             methodToCall = initStudyJS;
-            onePageToAnother(contentGain, url, methodToCall)
+            onePageToAnother(contentGain, url, methodToCall);
       });
 
       btnBackToBreathe.addEventListener("click", function () {
-            url = "/breathe";
+            url          = "/breathe";
             methodToCall = circlecanvasBreathe;
-            onePageToAnother(contentGain, url, methodToCall)
+            onePageToAnother(contentGain, url, methodToCall);
       });
 
-      var buttonHomePageGain = document.getElementById("buttonHomePageGain");
       buttonHomePageGain.addEventListener("click", function () {
-            url = "/";
+            url          = "/";
             methodToCall = homeJS;
-            onePageToAnother(contentGain, url, methodToCall)
+            onePageToAnother(contentGain, url, methodToCall);
       });
 
 }

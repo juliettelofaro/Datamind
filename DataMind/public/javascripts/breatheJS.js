@@ -1,23 +1,20 @@
 function circlecanvasBreathe() {
-
       var canvasBreathe         = document.getElementById("canvasBreathe");
       canvasBreathe.height      = 450;
       canvasBreathe.width       = window.innerWidth;
       var c                     = canvasBreathe.getContext("2d");
       var radius                = 50;
-      var buttonStartBreathing  = document.getElementById("buttonStartBreathing");
       var x                     = 625;
       var y                     = 200;
       var xText                 = 600;
       var yText                 = 210;
       var deeppink              = "deeppink";
       var lightpink             = "lightpink";
+      var buttonStartBreathing  = document.getElementById("buttonStartBreathing");
       var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
-      var paraBreathe           = document.getElementById("paraBreathe");
-      var contentBreathe   = document.getElementById("contentBreathe");
-      var url;
-      var methodToCall;
-      var timeGo;
+      var contentBreathe        = document.getElementById("contentBreathe");
+      var url  = "/";
+      var methodToCall = homeJS;
 
       function animate() {
             var myReq = requestAnimationFrame(animate);
@@ -64,9 +61,9 @@ function circlecanvasBreathe() {
       });
 
       buttonHomePageBreathe.addEventListener("click", function () {
-            url = "/";
-            methodToCall = homeJS;
-            onePageToAnother(contentBreathe, url, methodToCall)
+
+
+            onePageToAnother(contentBreathe, url, methodToCall);
             stopMusic();
             // arrêter le setInterval de timerUp, only solution ; put this event directly
             //in timerUpJS
@@ -76,6 +73,6 @@ function circlecanvasBreathe() {
 function onceBreathingDone() {
       stopMusic();
       alert("You just finished the 10 mins. Now go back to work!");
-      var type = 1;
-      initBackHome(type);
+
+      onePageToAnother(contentBreathe, url, methodToCall);
 }

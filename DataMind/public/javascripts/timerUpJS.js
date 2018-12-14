@@ -45,7 +45,7 @@ function initTimerUp(study, breathe) {
             if (breathe === 10) {
                   var paraBreathe       = document.getElementById("paraBreathe");
                   paraBreathe.innerHTML = sentence;
-                  if (second === 55) {
+                  if (second === 5) {
                         clearInterval(timerVar);
                         onceBreathingDone();
                   }
