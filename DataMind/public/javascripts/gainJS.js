@@ -5,7 +5,7 @@ function initGainJS() {
       var divNumberStars       = document.getElementById("divNumberStars");
       var stars                = localStorage.getItem("stars");
       var contentGain            = document.getElementById("contentGain");
-      var request                = new XMLHttpRequest();
+
       var url;
       var methodToCall;
       divNumberStars.innerHTML = stars;
@@ -13,19 +13,20 @@ function initGainJS() {
       btnBackToStudy.addEventListener("click", function () {
             url = "/study";
             methodToCall = initStudyJS;
-            onePageToAnother(contentGain, request, url, methodToCall)
+            onePageToAnother(contentGain, url, methodToCall)
       });
 
       btnBackToBreathe.addEventListener("click", function () {
             url = "/breathe";
             methodToCall = circlecanvasBreathe;
-            onePageToAnother(contentGain, request, url, methodToCall)
+            onePageToAnother(contentGain, url, methodToCall)
       });
 
       var buttonHomePageGain = document.getElementById("buttonHomePageGain");
       buttonHomePageGain.addEventListener("click", function () {
-            var type = 3;
-            initBackHome(type);
+            url = "/";
+            methodToCall = homeJS;
+            onePageToAnother(contentGain, url, methodToCall)
       });
 
 }

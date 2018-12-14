@@ -14,6 +14,9 @@ function circlecanvasBreathe() {
       var lightpink             = "lightpink";
       var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
       var paraBreathe           = document.getElementById("paraBreathe");
+      var contentBreathe   = document.getElementById("contentBreathe");
+      var url;
+      var methodToCall;
       var timeGo;
 
       function animate() {
@@ -61,8 +64,9 @@ function circlecanvasBreathe() {
       });
 
       buttonHomePageBreathe.addEventListener("click", function () {
-            var type = 1;
-            initBackHome(type);
+            url = "/";
+            methodToCall = homeJS;
+            onePageToAnother(contentBreathe, url, methodToCall)
             stopMusic();
             // arrêter le setInterval de timerUp, only solution ; put this event directly
             //in timerUpJS

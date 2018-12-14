@@ -3,9 +3,14 @@ function initStudyJS() {
       var buttonHomePageStudy = document.getElementById("buttonHomePageStudy");
       var startSessionButton  = document.getElementById("startSessionButton");
       var giveUpMsg           = document.getElementById("giveUpMsg");
+      var contentStudy   = document.getElementById("contentStudy");
+      var url;
+      var methodToCall;
+
       buttonHomePageStudy.addEventListener("click", function () {
-            var type = 2;
-            initBackHome(type);
+            url = "/";
+            methodToCall = homeJS;
+            onePageToAnother(contentStudy, url, methodToCall)
       });
 
       startSessionButton.addEventListener("click", function (e) {
@@ -32,10 +37,10 @@ function studyDisplayTimerAndButton() {
 // Called by timerUpJS.js   Redirect to gain page a + msg + 1 new star
 function onceSessionStudyDone() {
       var contentStudy = document.getElementById("contentStudy");
-      var request      = new XMLHttpRequest();
+
       var url          = "/gain";
       var methodToCall = initGainJS;
       starCount();
       alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
-      onePageToAnother(contentStudy, request, url, methodToCall);
+      onePageToAnother(contentStudy, url, methodToCall);
 }
