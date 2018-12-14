@@ -10,39 +10,6 @@ function onePageToAnother(contentToReplace, requestObject, url, methodToCall) {
 }
 
 
-
-
-
-function fromHomeToBreathe(contentToReplace, request) {
-      request.onreadystatechange = function () {
-            contentToReplace.innerHTML =
-                  this.responseText;
-            circlecanvasBreathe();
-      };
-      request.open("GET", "/breathe", true);
-      request.send();
-}
-
-function fromHomeToStudy(contentToReplace, request) {
-      request.onreadystatechange = function () {
-            contentToReplace.innerHTML = this.responseText;
-            initStudyJS();
-      };
-      request.open("GET", "/study", true);
-      request.send();
-}
-
-function fromHomeToGain(contentToReplace, request) {
-
-      request.onreadystatechange = function () {
-            contentToReplace.innerHTML = this.responseText;
-            initGainJS();
-
-      };
-      request.open("GET", "/gain");
-      request.send();
-}
-
 // STUDY PAGE
 function fromStudyToGain() {
       var request                = new XMLHttpRequest();
