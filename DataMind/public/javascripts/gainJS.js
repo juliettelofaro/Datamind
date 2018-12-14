@@ -4,14 +4,22 @@ function initGainJS() {
       var btnBackToBreathe     = document.getElementById("btnBackToBreathe");
       var divNumberStars       = document.getElementById("divNumberStars");
       var stars                = localStorage.getItem("stars");
+      var contentGain            = document.getElementById("contentGain");
+      var request                = new XMLHttpRequest();
+      var url;
+      var methodToCall;
       divNumberStars.innerHTML = stars;
 
       btnBackToStudy.addEventListener("click", function () {
-            fromGainToStudy();
+            url = "/study";
+            methodToCall = initStudyJS;
+            onePageToAnother(contentGain, request, url, methodToCall)
       });
 
       btnBackToBreathe.addEventListener("click", function () {
-            fromGainToBreathe();
+            url = "/breathe";
+            methodToCall = circlecanvasBreathe;
+            onePageToAnother(contentGain, request, url, methodToCall)
       });
 
       var buttonHomePageGain = document.getElementById("buttonHomePageGain");
@@ -21,3 +29,6 @@ function initGainJS() {
       });
 
 }
+
+
+

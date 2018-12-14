@@ -22,30 +22,7 @@ function fromStudyToGain() {
       request.send();
 }
 
-// GAIN PAGE
-function fromGainToStudy() {
-      var request                = new XMLHttpRequest();
-      var contentGain            = document.getElementById("contentGain");
-      request.onreadystatechange = function () {
-            contentGain.innerHTML =
-                  this.responseText;
-            initStudyJS();
-      };
-      request.open('GET', '/study', true);
-      request.send();
-}
 
-function fromGainToBreathe() {
-      var request                = new XMLHttpRequest();
-      var contentGain            = document.getElementById("contentGain");
-      request.onreadystatechange = function () {
-            contentGain.innerHTML =
-                  this.responseText;
-            circlecanvasBreathe();
-      };
-      request.open('GET', '/breathe');
-      request.send();
-}
 
 // ALL THE GO BACK TO HOME PAGE
 function initBackHome(view) {

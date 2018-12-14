@@ -44,9 +44,7 @@ function initTimerUp(study, breathe) {
                         giveUpMsg.style.display = "block";
                   });
                   if (second === 5) {
-                        starCount()
-                        alert("Congratulations ! You won one star ! You'll now be redirected to your Star Page :)");
-                        fromStudyToGain();
+                        onceSessionStudyDone();
                         clearInterval(timerVar);
                   }
             }
