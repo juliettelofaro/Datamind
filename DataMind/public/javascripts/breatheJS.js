@@ -16,7 +16,6 @@ function circlecanvasBreathe() {
       var paraBreathe           = document.getElementById("paraBreathe");
       var timeGo;
 
-
       function animate() {
             var myReq = requestAnimationFrame(animate);
             c.clearRect(0, 0, innerWidth, innerHeight);
@@ -57,7 +56,7 @@ function circlecanvasBreathe() {
       buttonStartBreathing.addEventListener("click", function () {
             animate();
             initTimerUp(0, 10);
-            playMusic()
+            playMusic();
             buttonStartBreathing.disabled = true;
       });
 
@@ -65,8 +64,14 @@ function circlecanvasBreathe() {
             var type = 1;
             initBackHome(type);
             stopMusic();
-          // arrêter le setInterval de timerUp, only solution ; put this event directly
+            // arrêter le setInterval de timerUp, only solution ; put this event directly
             //in timerUpJS
-
       });
+}
+
+function onceBreathingDone() {
+      stopMusic();
+      alert("You just finished the 10 mins. Now go back to work!");
+      var type = 1;
+      initBackHome(type);
 }

@@ -1,4 +1,3 @@
-// HOME PAGE
 function onePageToAnother(contentToReplace, requestObject, url, methodToCall) {
       requestObject.onreadystatechange = function () {
             contentToReplace.innerHTML =
@@ -8,20 +7,6 @@ function onePageToAnother(contentToReplace, requestObject, url, methodToCall) {
       requestObject.open("GET", url, true);
       requestObject.send();
 }
-
-
-// STUDY PAGE
-function fromStudyToGain() {
-      var request                = new XMLHttpRequest();
-      var contentStudy           = document.getElementById("contentStudy");
-      request.onreadystatechange = function () {
-            contentStudy.innerHTML = this.responseText;
-            initGainJS();
-      };
-      request.open('GET', '/gain');
-      request.send();
-}
-
 
 
 // ALL THE GO BACK TO HOME PAGE

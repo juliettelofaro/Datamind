@@ -4,13 +4,12 @@ function initTimerUp(study, breathe) {
       var timerVar     = setInterval(countGo, 1000);
       var timeGo;
 
-
       // FUNCTION WATCH
       function countGo() {
             ++totalSeconds;
-            var hour              = Math.floor(totalSeconds / 3600);
-            var minute            = Math.floor((totalSeconds - hour * 3600) / 60);
-            var second            = totalSeconds - (hour * 3600 + minute * 60);
+            var hour   = Math.floor(totalSeconds / 3600);
+            var minute = Math.floor((totalSeconds - hour * 3600) / 60);
+            var second = totalSeconds - (hour * 3600 + minute * 60);
 
             var sentence;
 
@@ -26,17 +25,10 @@ function initTimerUp(study, breathe) {
 
             // STUDY WATCH
             if (study === 50) {
-                  var paraStudy                    = document.getElementById("paraStudy");
-                  var buttonStopStudy              = document.getElementById("buttonStopStudy");
-                  var beforeGiveUpMsg              = document.getElementById("beforeGiveUpMsg");
-                  paraStudy.innerHTML              = sentence;
-                  divButtonStopStudy.style.display = "block";
-                  buttonStopStudy.addEventListener("mouseenter", function () {
-                        beforeGiveUpMsg.style.display = "block";
-                  });
-                  buttonStopStudy.addEventListener("mouseout", function () {
-                        beforeGiveUpMsg.style.display = "none";
-                  });
+                  var buttonStopStudy = document.getElementById("buttonStopStudy");
+                  var paraStudy       = document.getElementById("paraStudy");
+                  paraStudy.innerHTML = sentence;
+                  studyDisplayTimerAndButton();
                   buttonStopStudy.addEventListener("click", function () {
                         startSessionButton.disabled = false;
                         totalSeconds                = 0;
@@ -55,10 +47,7 @@ function initTimerUp(study, breathe) {
                   paraBreathe.innerHTML = sentence;
                   if (second === 55) {
                         clearInterval(timerVar);
-                        stopMusic();
-                        alert("You just finished the 10 mins. Now go back to work!");
-                        var type = 1;
-                        initBackHome(type);
+                        onceBreathingDone();
                   }
             }
       }
