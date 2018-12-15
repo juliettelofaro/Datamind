@@ -6,7 +6,5 @@ function starCount() {
             var upOneNumberStars = localStorage.getItem("stars");
             upOneNumberStars++;
             localStorage.setItem("stars", upOneNumberStars);
-
       }
-
 }

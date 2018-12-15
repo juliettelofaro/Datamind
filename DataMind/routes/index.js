@@ -3,11 +3,10 @@ var router  = express.Router();
 
 /* GET home page.*/
 router.get('/', function (req, res, next) {
-      res.render('home', {title: 'Breathe, Chill, Enjoy'});
+      res.render('home');
 });
 
 router.get('/breathe', function (req, res, next) {
-      console.log(" BREATH API");
       res.render('breathe', {title: 'Breathe'});
 });
 

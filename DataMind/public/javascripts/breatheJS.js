@@ -13,8 +13,8 @@ function circlecanvasBreathe() {
       var buttonStartBreathing  = document.getElementById("buttonStartBreathing");
       var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
       var contentBreathe        = document.getElementById("contentBreathe");
-      var url  = "/";
-      var methodToCall = homeJS;
+      var url;
+      var methodToCall;
 
       function animate() {
             var myReq = requestAnimationFrame(animate);
@@ -61,8 +61,8 @@ function circlecanvasBreathe() {
       });
 
       buttonHomePageBreathe.addEventListener("click", function () {
-
-
+            url          = "/";
+            methodToCall = homeJS;
             onePageToAnother(contentBreathe, url, methodToCall);
             stopMusic();
             // arrêter le setInterval de timerUp, only solution ; put this event directly
@@ -73,6 +73,8 @@ function circlecanvasBreathe() {
 function onceBreathingDone() {
       stopMusic();
       alert("You just finished the 10 mins. Now go back to work!");
-
+      var contentBreathe        = document.getElementById("contentBreathe");
+      var url          = "/";
+      var methodToCall = homeJS;
       onePageToAnother(contentBreathe, url, methodToCall);
 }

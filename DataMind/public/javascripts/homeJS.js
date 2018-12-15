@@ -7,6 +7,7 @@ function homeJS() {
       var url;
       var methodToCall;
 
+
       breatheButton.addEventListener("click", function (e) {
             url = "/breathe";
             methodToCall = circlecanvasBreathe;

@@ -1,3 +1,4 @@
+// FUNCTION DU CHRONOMETRE
 function initTimerUp(study, breathe) {
 
       var totalSeconds = 0;
@@ -55,3 +56,22 @@ function initTimerUp(study, breathe) {
 }
 
 
+// Refaire ce script :
+// ne pas faire de fonction qui englobent out
+// juste direct commencer par déclarer les variable qu'il faut en globale,
+// puis faire deux fonctions, je sais pas encore comment mais deux
+// de sorte à ce quil y ait pas les parametres..?
+// et qu'on accède au clearInterval, p-ê le placer dans une fonction à part qu'il suffira d'appeler
+// pour ça : déclarer setInterval en global comme ça jaurai acces et pourrai faire clearINterval dans
+// une fonction à part -> NON CA NE MARCHE PAS CA, LE SETINTERVAL EST JAMAIS APPELE SI IL EST PLACE COMME CA
+// EN GLOBAL EST PAS DANS UNE FONCTION.
+// DOnc il faudrait pas excatement ce que jai dis ^ mais avec setInterval directement dans breatheJS
+// comme ça dans breatheJS j'aurai aussi accès à clearInterval
+//
+
+// Aussi demain : remplacer appel ajax par un objet qui contiendrai les pté url, content, method, et la méthode:
+// e la requete ajax directement
+// dès que besoin : creer un nouvel objet avec les bonnes ptés
+
+
+//filmer mon ecran expliquer tout

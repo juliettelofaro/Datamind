@@ -9,3 +9,5 @@ function onePageToAnother(contentToReplace, url, methodToCall) {
       requestObject.send();
 }
 
+
+
