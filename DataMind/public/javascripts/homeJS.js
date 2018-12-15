@@ -27,4 +27,8 @@ function homeJS() {
             onePageToAnother(contentHome, url, methodToCall);
 
       });
+
+
+
+
 }
