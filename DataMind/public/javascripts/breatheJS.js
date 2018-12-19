@@ -60,14 +60,7 @@ function circlecanvasBreathe() {
             buttonStartBreathing.disabled = true;
       });
 
-      buttonHomePageBreathe.addEventListener("click", function () {
-            url          = "/";
-            methodToCall = homeJS;
-            onePageToAnother(contentBreathe, url, methodToCall);
-            stopMusic();
-            // arrêter le setInterval de timerUp, only solution ; put this event directly
-            //in timerUpJS
-      });
+
 }
 
 function onceBreathingDone() {

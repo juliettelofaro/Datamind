@@ -1,6 +1,6 @@
 // FUNCTION DU CHRONOMETRE
 function initTimerUp(study, breathe) {
-
+      var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
       var totalSeconds = 0;
       var timerVar     = setInterval(countGo, 1000);
       var timeGo;
@@ -46,13 +46,21 @@ function initTimerUp(study, breathe) {
             if (breathe === 10) {
                   var paraBreathe       = document.getElementById("paraBreathe");
                   paraBreathe.innerHTML = sentence;
-                  if (second === 50) {
+                  if (second === 5) {
                         clearInterval(timerVar);
                         onceBreathingDone();
                   }
             }
       }
+      //bouton retour home de Breathe , mis ici pour que clearInterval fonctionne (pouvais pas mettre dans breatheJS)
+      buttonHomePageBreathe.addEventListener("click", function () {
+            url          = "/";
+            methodToCall = homeJS;
+            onePageToAnother(contentBreathe, url, methodToCall);
+            stopMusic();
+            clearInterval(timerVar);
 
+      });
 }
 
 
