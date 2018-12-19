@@ -46,7 +46,7 @@ function initTimerUp(study, breathe) {
             if (breathe === 10) {
                   var paraBreathe       = document.getElementById("paraBreathe");
                   paraBreathe.innerHTML = sentence;
-                  if (second === 5) {
+                  if (second === 50) {
                         clearInterval(timerVar);
                         onceBreathingDone();
                   }
@@ -67,11 +67,4 @@ function initTimerUp(study, breathe) {
 // EN GLOBAL EST PAS DANS UNE FONCTION.
 // DOnc il faudrait pas excatement ce que jai dis ^ mais avec setInterval directement dans breatheJS
 // comme ça dans breatheJS j'aurai aussi accès à clearInterval
-//
 
-// Aussi demain : remplacer appel ajax par un objet qui contiendrai les pté url, content, method, et la méthode:
-// e la requete ajax directement
-// dès que besoin : creer un nouvel objet avec les bonnes ptés
-
-
-//filmer mon ecran expliquer tout
