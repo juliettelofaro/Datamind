@@ -3,9 +3,10 @@ function homeJS() {
       var studyButton   = document.getElementById("studyButton");
       var gainButton    = document.getElementById("gainButton");
       var contentHome   = document.getElementById("contentHome");
+      var iconFistHome  = document.getElementById("iconFistHome");
       var dateStorage   = localStorage.getItem("date");
-      var dateHome      = new Date(dateStorage);
-      var currentDate   = new Date();
+      var dateHome    = new Date(dateStorage);
+      var currentDate = new Date();
       var url;
       var methodToCall;
 
@@ -33,6 +34,13 @@ function homeJS() {
 
       });
 
+/*
+      iconFistHome.addEventListener("click", function(e) {
+            url          = "/motivation";
+            methodToCall = initMotivationJS;
+            onePageToAnother(contentHome, url, methodToCall);
+      })
+*/
 }
 
 

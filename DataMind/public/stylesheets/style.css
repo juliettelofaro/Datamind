@@ -120,10 +120,9 @@ h1 {
     margin: 50px;
 }
 
-
 #paraBreathe {
     font-size: 50px;
-    color : dimgray;
+    color: dimgray;
 }
 
 #btnBackToStudy {
@@ -199,7 +198,7 @@ h3 {
 
 #buttonStartBreathing:hover {
     opacity: 1
-  }
+}
 
 .buttonBackHome {
     cursor: pointer;
@@ -215,4 +214,24 @@ h3 {
 
 .buttonBackHome:hover {
     opacity: 1
+}
+
+#divIconFistHome {
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    padding: 16px 32px;
+    margin : 150px
+}
+
+#iconFistHome {
+    color: #c49ac5;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+
+#iconFistHome:hover {
+    color: #e49a9b;
+    font-size: 19px;
 }

@@ -11,10 +11,7 @@ function circlecanvasBreathe() {
       var deeppink              = "deeppink";
       var lightpink             = "lightpink";
       var buttonStartBreathing  = document.getElementById("buttonStartBreathing");
-      var buttonHomePageBreathe = document.getElementById("buttonHomePageBreathe");
-      var contentBreathe        = document.getElementById("contentBreathe");
-      var url;
-      var methodToCall;
+
 
       function animate() {
             var myReq = requestAnimationFrame(animate);
