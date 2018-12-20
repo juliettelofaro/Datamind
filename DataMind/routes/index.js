@@ -18,4 +18,8 @@ router.get('/gain', function (req, res, next) {
       res.render('gain');
 });
 
+router.get('/motivated', function (req, res, next) {
+      res.render('motivated');
+});
+
 module.exports = router;

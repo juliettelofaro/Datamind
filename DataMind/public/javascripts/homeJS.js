@@ -34,13 +34,13 @@ function homeJS() {
 
       });
 
-/*
+
       iconFistHome.addEventListener("click", function(e) {
-            url          = "/motivation";
-            methodToCall = initMotivationJS;
+            url          = "/motivated";
+            methodToCall = initMotivatedJS;
             onePageToAnother(contentHome, url, methodToCall);
       })
-*/
+
 }
 
 
