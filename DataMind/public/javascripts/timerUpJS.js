@@ -37,7 +37,7 @@ function initTimerUp(study, breathe) {
                         clearInterval(timerVar);
                         giveUpMsg.style.display = "block";
                   });
-                  if (second === 5) {
+                  if (second === 15) {
                         onceSessionStudyDone();
                         clearInterval(timerVar);
                   }
@@ -47,7 +47,7 @@ function initTimerUp(study, breathe) {
             if (breathe === 10) {
                   var paraBreathe       = document.getElementById("paraBreathe");
                   paraBreathe.innerHTML = sentence;
-                  if (second === 55) {
+                  if (second === 20) {
                         clearInterval(timerVar);
                         onceBreathingDone();
                   }
