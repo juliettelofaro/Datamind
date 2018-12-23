@@ -1,5 +1,6 @@
 # Datamind
 
+- An application to focus during studies.
 
 - Server : NodeJS
 
