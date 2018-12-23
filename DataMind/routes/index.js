@@ -27,12 +27,10 @@ router.get('/motivated', function (req, res, next) {
             const db         = client.db(dbName);
             const collection = db.collection('motivmess');
             collection.find({}).toArray(function (err, docs) {
-
                   var myMsg = docs;
                   var rand  = myMsg[Math.floor(Math.random() * myMsg.length)];
                   console.log("voici un random = " + rand.message);
                   res.render('motivated', {message: rand.message});
-
             });
       });
 });
