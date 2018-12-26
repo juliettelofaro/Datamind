@@ -3,9 +3,9 @@ function initGainJS() {
       var btnBackToStudy       = document.getElementById("btnBackToStudy");
       var btnBackToBreathe     = document.getElementById("btnBackToBreathe");
       var divNumberStars       = document.getElementById("divNumberStars");
-      var stars                = localStorage.getItem("stars");
       var contentGain          = document.getElementById("contentGain");
       var buttonHomePageGain   = document.getElementById("buttonHomePageGain");
+      var stars                = localStorage.getItem("stars");
       var url;
       var methodToCall;
       divNumberStars.innerHTML = stars;

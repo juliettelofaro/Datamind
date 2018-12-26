@@ -1,4 +1,5 @@
 function homeJS() {
+      // Mettre des const quand on est sûrs que qqch ne doit plus être modifié
       var breatheButton = document.getElementById("breatheButton");
       var studyButton   = document.getElementById("studyButton");
       var gainButton    = document.getElementById("gainButton");
@@ -24,16 +25,13 @@ function homeJS() {
             url          = "/study";
             methodToCall = initStudyJS;
             onePageToAnother(contentHome, url, methodToCall);
-
       });
 
       gainButton.addEventListener("click", function (e) {
             url          = "/gain";
             methodToCall = initGainJS;
             onePageToAnother(contentHome, url, methodToCall);
-
       });
-
 
       iconFistHome.addEventListener("click", function(e) {
             url          = "/motivated";

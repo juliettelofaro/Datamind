@@ -20,19 +20,24 @@ router.get('/gain', function (req, res, next) {
 });
 
 router.get('/motivated', function (req, res, next) {
-      const url    = 'mongodb://localhost:27017';
-      const dbName = 'DataMind';
-      MongoClient.connect(url, function (err, client) {
+      // Factoriser la BDD dans une autre fichier
+      const URL    = 'mongodb://localhost:27017';
+      const DBNAME = 'DataMind';
+      MongoClient.connect(URL, function (err, client) {
             assert.equal(null, err);
-            const db         = client.db(dbName);
+            const db         = client.db(DBNAME);
             const collection = db.collection('motivmess');
             collection.find({}).toArray(function (err, docs) {
                   var myMsg = docs;
                   var rand  = myMsg[Math.floor(Math.random() * myMsg.length)];
-                  console.log("voici un random = " + rand.message);
                   res.render('motivated', {message: rand.message});
             });
       });
 });
 
+// Après avoir configuré le routeur on doit l'exporter grâce à module.exports car le routeur
+// Express en a besoin
+// Donc à chaque fois que je veux utiliser du code dans un autre fichier je fais d'abord un
+// exports du code (fonction,class..) et je fais ensuite un require/un import dans un autre
+// fichier
 module.exports = router;

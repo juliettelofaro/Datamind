@@ -1,6 +1,6 @@
 function starCount() {
       var numberStarStorage = 1;
-      var dateStar              = new Date();
+      var dateStar          = new Date();
 
       if (localStorage.getItem("stars") === null) {
             localStorage.setItem("stars", numberStarStorage);
